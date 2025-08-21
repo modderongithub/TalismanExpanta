@@ -80,7 +80,7 @@ Talisman.config_tab = function()
                   label = localize("talisman_string_C"),
                   scale = 0.8,
                   w = 6,
-                  options = {localize("talisman_vanilla"), localize("talisman_omeganum") .. "(e10##1000)"},
+                  options = {localize("talisman_vanilla"), localize("talisman_omeganum") .. "(e10##1000)", "ExpantaNum ({10,9e15,1,2})",
                   opt_callback = 'talisman_upd_score_opt',
                   current_option = Talisman.config_file.score_opt_id,
                 })}
@@ -117,8 +117,12 @@ G.FUNCS.talismanMenu = function(e)
   }
 end
 G.FUNCS.talisman_upd_score_opt = function(e)
+  local expantaEnabled = false -- For debugging, Expanta is not made yet
+  if !expantaEnabled and e.to_key == 3 then
+    e.to_key = 2
+  end 
   Talisman.config_file.score_opt_id = e.to_key
-  local score_opts = {"", "omeganum"}
+  local score_opts = {"", "omeganum", "expantanum"}
   Talisman.config_file.break_infinity = score_opts[e.to_key]
   nativefs.write(talisman_path .. "/config.lua", STR_PACK(Talisman.config_file))
 end
@@ -138,6 +142,7 @@ if Talisman.config_file.break_infinity then
           v.level = to_big(v.level)
       end
       obj.starting_params.dollars = to_big(obj.starting_params.dollars)
+      -- obj.starting_params.ante = to_big(obj.starting_params.ante)
       return obj
   end
 
