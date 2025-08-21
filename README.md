@@ -1,8 +1,9 @@
 # Talisman
-A mod for Balatro that increases the score cap from ~10^308 to ~10{1000}10, allowing for endless runs to go past "naneinf" and Ante 39, and removes the long animations that come with these scores.
+A mod for Balatro that increases the score cap from ~10^308 to {10,9e15,1,2}, allowing for endless, modded runs to go past "naneinf" and Ante 39, then beyond absurdity... and removes the long animations that come with these scores.
 
 The "BigNum" representation used by Talisman is a modified version of [this](https://github.com/veprogames/lua-big-number) library by veprogames.
 The "OmegaNum" representation used by Talisman is a port of [OmegaNum.js](https://github.com/Naruyoko/OmegaNum.js/blob/master/OmegaNum.js) by [Mathguy23](https://github.com/Mathguy23)
+The "Expatanum" representation is a port of [Expantanum.js](https://github.com/Naruyoko/ExpantaNum.js/blob/master/ExpantaNum.js) by [modderongithub](https://github.com/modderongithub).
 
 ## Installation
 Talisman requires [Lovely](https://github.com/ethangreen-dev/lovely-injector) to be installed in order to be loaded by Balatro.
