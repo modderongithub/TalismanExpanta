@@ -117,7 +117,7 @@ G.FUNCS.talismanMenu = function(e)
   }
 end
 G.FUNCS.talisman_upd_score_opt = function(e)
-  local expantaEnabled = false -- For debugging, Expanta is not made yet
+  local expantaEnabled = true -- For debugging, Expanta is not made yet
   if !expantaEnabled and e.to_key == 3 then
     e.to_key = 2
   end 
